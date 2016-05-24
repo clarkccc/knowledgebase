@@ -2,7 +2,6 @@ package lang.concurrent.control;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -14,10 +13,12 @@ import java.util.concurrent.locks.ReentrantLock;
 // 测试将 Synchronizedy/wait/notify 对象化的 ReentranLock/Condition
 public class ConditionTest {
     public static void main(String arg[]){
+
         final ReentrantLock lock=new ReentrantLock();
         final Condition conditionA = lock.newCondition();
-        Condition conditionB = lock.newCondition();
-        Condition conditionC = lock.newCondition();
+        final Condition conditionB = lock.newCondition();
+        final Condition conditionC = lock.newCondition();
+
         ExecutorService service= Executors.newFixedThreadPool(4);
         service.execute(new Job("A",lock,conditionA,conditionB));
         service.execute(new Job("B",lock,conditionB,conditionC));
