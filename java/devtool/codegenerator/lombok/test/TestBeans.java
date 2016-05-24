@@ -1,6 +1,6 @@
-package test;
+package devtool.codegenerator.lombok.test;
 
-import beans.DataBean;
+import devtool.codegenerator.lombok.beans.DataBean;
 
 /**
  * Created by yuzhm on 2016/5/9.
