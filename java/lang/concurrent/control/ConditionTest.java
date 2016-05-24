@@ -10,6 +10,8 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by yuzhm on 2016/5/24.
  */
+
+// 测试将 Synchronizedy/wait/notify 对象化的 ReentranLock/Condition
 public class ConditionTest {
     public static void main(String arg[]){
         final ReentrantLock lock=new ReentrantLock();
@@ -25,6 +27,7 @@ public class ConditionTest {
             public void run() {
                 try {
                     lock.lock();
+                    // 需要上锁以后才能发信号量
                     conditionA.signal();
                 } finally {
                     lock.unlock();
