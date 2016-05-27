@@ -1,4 +1,4 @@
-package lang.concurrent.control;
+package lang.concurrent.control.newlock;
 
 import java.util.concurrent.locks.ReentrantLock;
 

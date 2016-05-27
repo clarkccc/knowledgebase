@@ -1,4 +1,4 @@
-package lang.concurrent.control;
+package lang.concurrent.control.newlock;
 
 import java.util.concurrent.locks.LockSupport;
 
@@ -18,9 +18,9 @@ public class LockSurportTest {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println(Thread.currentThread().getName()+":park");
-                LockSupport.park();
-                System.out.println(Thread.currentThread().getName()+":unpark");
+            System.out.println(Thread.currentThread().getName()+":park");
+            LockSupport.park();
+            System.out.println(Thread.currentThread().getName()+":unpark");
             }
         });
         thread.start();
